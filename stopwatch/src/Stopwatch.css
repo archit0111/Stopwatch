@@ -1,0 +1,49 @@
+h1{
+    color: white;
+    font-size: 8vh;
+    justify-self: center;
+    width: max-content;
+}
+
+#heading{
+    margin-top: 4em;
+}
+.main_div{
+    justify-self: center;
+    width: fit-content;
+}
+#display{
+    height: 15vh;
+    width: fit-content;
+    align-content: center;
+    justify-self: center;
+}
+#display_para{
+    background: #ffffff;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.8em;
+    text-align: center;
+    font-size: 3vh;
+}
+.btn{
+    display: flex;
+    gap: 4em;
+    padding-top: 5em;
+    width: fit-content;
+}
+.btn button{
+    height: 6vh;
+    width: 12vh;
+    border-radius: 5px;
+    font-size: x-large;
+}
+#start_btn{
+    background-color: green;
+}
+#stop_btn{
+    background-color: red;
+}
+#reset_btn{
+    background-color: yellow;
+}
