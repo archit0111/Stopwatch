@@ -1,4 +1,3 @@
-import './App.css'
 import Stopwatch from './Stopwatch.jsx'
 
 function App() {

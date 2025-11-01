@@ -6,17 +6,16 @@ import { useState, useRef } from 'react'
 function Stopwatch(){
     const [time,settime]=useState("00:00:00");
     const [clk,handleClk]=useState("Start");
+    const [num,setnum]=useState(0);
     const c= useRef(false);
     const intervalRef = useRef(null);
     const [lap_divs, setDiv]=useState([]);
     function handleClick(e){
+        setnum(0);
         if(e.target.name==='start'){
             if(c.current){
                     return;
                 }
-            if(clk==="Restart"){
-                toaddDiv();
-            }    
             c.current=true;
             intervalRef.current = setInterval(()=>{
                 settime(time=>{
@@ -42,12 +41,18 @@ function Stopwatch(){
         }else{
             handleStop();
             handleClk("Start");
+            setnum(0);
+            setDiv([]);
             settime("00:00:00");
         }
     }
 
 
     function handleStop(){
+        if(num===0){
+            toaddDiv();
+        }
+        setnum(num+1);
         handleClk("Restart");
         clearInterval(intervalRef.current);
         intervalRef.current=null;
@@ -55,12 +60,11 @@ function Stopwatch(){
     }
 
     function toaddDiv(){
-
-        setDiv(
+        setDiv([...lap_divs,
             <div className="lap">
-            <div id="lap_row">LAP {lap_divs.length+1}.</div>
+            <div id="lap_row">LAP {lap_divs.length == NaN ? 1 : lap_divs.length+1}.</div>
             <div id="lap_time">{time}</div>
-            </div>
+            </div>]
         )
     }
 

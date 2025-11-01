@@ -1,5 +1,5 @@
 h1{
-    color: white;
+    color: #975600;
     font-size: 8vh;
     justify-self: center;
     width: max-content;
@@ -39,11 +39,26 @@ h1{
     font-size: x-large;
 }
 #start_btn{
-    background-color: green;
+    background-color: #0bb50b;
 }
 #stop_btn{
     background-color: red;
 }
 #reset_btn{
     background-color: yellow;
+}
+
+.laps{
+    text-align: center;
+    margin-top: 10vh;
+}
+.laps .lap{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2vh;
+    background: #ffb046;
+    font-weight: bold;
+    padding: 1vh;
+    border-radius: 10px;
+    margin: 0em 0.4em 0.7em 0.4em;
 }
